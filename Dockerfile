@@ -22,6 +22,7 @@ RUN mkdir -p "${REPO_PATH}"
 # copy dependencies files only
 COPY ./dependencies-apt.txt "${REPO_PATH}/"
 COPY ./dependencies-py.txt "${REPO_PATH}/"
+COPY ./packages/analyzeFreq_package/bagfiles "${REPO_PATH}/" 
 
 # install apt dependencies
 RUN apt-get update \

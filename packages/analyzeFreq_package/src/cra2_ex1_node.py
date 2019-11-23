@@ -6,7 +6,23 @@ from duckietown import DTROS
 from std_msgs.msg import String
 import numpy as np
 import rosbag
+import os
+from os import listdir
+from os.path import isfile, join
 
+
+def analyzer():
+    print(os.getcwd())
+    mypath = os.getcwd()
+    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+    print(onlyfiles)
+    bag1 = rosbag.Bag('example_rosbag_H3.bag')
+    bag2 = rosbag.Bag('3_param10.bag')
+    print(bag1)
+    print(bag2)
+    #for topic, msg, in bag.read_messages():
+        #print ('WTF')
+        #print(msg)
 
 
 '''
@@ -118,3 +134,11 @@ elif choice == 1:
 
 
 '''
+
+
+if __name__ == '__main__':
+    # create the node
+    try:
+        analyzer()
+    except rospy.ROSInterruptException:
+        pass
