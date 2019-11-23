@@ -1,0 +1,2 @@
+1) $ dts devel build -f --arch amd64
+2) $ docker run -it --rm duckietown/my-ros-program:v1-amd64

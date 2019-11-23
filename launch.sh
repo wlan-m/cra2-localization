@@ -4,4 +4,6 @@ set -e
 
 # YOUR CODE BELOW THIS LINE
 # ----------------------------------------------------------------------------
-echo "This is an empty launch script. Update it to launch your application."
+roscore &
+sleep 5
+rosrun analyzeFreq_package cra2_ex1_node.py
